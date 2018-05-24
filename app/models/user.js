@@ -29,7 +29,7 @@ module.exports = {
   },
 
   createUser(params) {
-    newUser = {
+    var newUser = {
       id: getNextId(users),
       ...params
     };
@@ -38,13 +38,13 @@ module.exports = {
   },
 
   updateUser(id, params) {
-    user = findUser(id)
+    var user = findUser(id)
     _.each(params, (val, key) => { user[key] = val })
     return user;
   },
 
   deleteUser(id) {
-    user = findUser(id)
+    var user = findUser(id)
     _.remove(users, (u) => { return u.id === user.id });
     return user
   },

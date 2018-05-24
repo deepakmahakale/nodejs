@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const User = require('../models/user')
 
-_user_params = function(params) {
+var _user_params = function(params) {
   return _.pick(params, ['name']);
 }
 
