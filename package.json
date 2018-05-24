@@ -4,7 +4,9 @@
   "description": "API demonstration on nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && nodemon lib/index.js --exec babel-node",
+    "build": "babel lib -d dist"
   },
   "keywords": [
     "nodejs",
@@ -16,5 +18,11 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "rimraf": "^2.6.2"
   }
 }
